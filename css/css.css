@@ -1,0 +1,408 @@
+@charset "utf-8";
+/* reset */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+     border: 0pt none;
+     font: inherit;
+     margin: 0pt;
+     padding: 0pt;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+     display: block;
+}
+
+body {
+     line-height: 1;
+}
+
+ol, ul {
+     list-style: none outside none;
+}
+
+blockquote, q {
+     quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+     content: none;
+}
+
+table {
+     border-collapse: collapse;
+     border-spacing: 0pt;
+}
+a{
+	text-decoration:none;
+}
+
+.clearfix:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+	font-size:0!important;
+}
+ 
+.clearfix {
+	display: inline-block;
+	width:100%;
+}
+ 
+html[xmlns] .clearfix {
+	display: block;
+}
+ 
+* html .clearfix {
+	height: 1%;
+}
+
+
+@font-face {
+    font-family: 'DINRegular';
+    src: url('../font/din-webfont.eot');
+    src: url('../font/din-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../font/din-webfont.woff') format('woff'),
+         url('../font/din-webfont.ttf') format('truetype'),
+         url('../font/din-webfont.svg#DINRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+/*---end reset---*/
+
+body{
+	font-size:12px;
+	background:#fff;
+	font-family: 'DINRegular';
+}
+
+a{
+	color:#232323;
+	-moz-transition:all 0.4s ease;
+	-webkit-transition:all 0.4s ease;
+	-o-transition:all 0.4s ease;
+	transition:all 0.4s ease;
+}
+
+
+.top-header{
+    position:fixed;
+	z-index:999;
+    top:0;
+    width:100%;
+    left:0;
+    box-shadow:0 0 5px rgba(0,0,0,0.2)
+}
+
+.contact{
+    width:100%;
+    background-color:#d91d83;
+    height:40px;
+    display:none;
+}
+
+.contact a{
+    color:#fff;
+}
+
+.social li{
+    display:inline-block;
+    width:25%;
+    float:left;
+    white-space:nowrap;
+}
+
+.social span{
+    display:block;
+    float:left;
+    width:14px;
+    height:14px;
+    margin-right:10px;
+    margin-top:-2px;
+}
+
+.social a{
+    display:block;
+    float:left;
+    margin-top:13px;
+}
+
+.facebook{
+    margin-left:20px;
+}
+
+.facebook span{
+    background:url(../img/facebook.png) no-repeat center;
+}
+
+.twitter span{
+    background:url(../img/twitter.png) no-repeat center;
+}
+
+.email span{
+    background:url(../img/email.png) no-repeat center;
+}
+
+.behance span{
+    background:url(../img/behance.png) no-repeat center;
+}
+
+.social a:hover{
+    text-shadow:0 0 5px #fff;
+}
+
+.header{
+	background-color:#fff;
+    height:50px;
+    position:relative;
+}
+
+.logo{
+    float:left;
+    font-size:0;
+    display:block;
+    margin-left:20px;
+    margin-top:10px;
+}
+
+.r-navigation{
+	display:none;
+}
+
+.navigation{
+    float:left;
+    margin-left:90px;
+}
+
+.navigation li{
+    display:inline-block;
+}
+
+.navigation a{
+    display:block;
+    font-size:10px;
+    text-transform:uppercase;
+    padding:19px 10px;
+    border-top:2px solid transparent;
+    margin:0 10px;
+    letter-spacing:1px;
+    position:relative;
+}
+
+.navigation a:before{
+    position:Absolute;
+    content:"/";
+    right:-15px;
+    color:#e1e1e1;
+}
+
+.navigation li:last-child a{
+    margin-right:0;
+}
+
+.navigation li:last-child a:before{
+   display:none;
+}
+
+.navigation a:hover,.navigation .on{
+    border-color:none;
+}
+
+.search{
+    float:right;
+    margin-right:90px;
+    margin-top:12px;
+}
+
+.s{
+    width:130px;
+    border:none;
+    font-size:11px;
+    color:#555;
+    font-style:italic;
+    font-family: 'DINRegular';
+}
+
+.searchsubmit{
+    background:url(../img/search1.png) center no-repeat;
+    border:none;
+    display:inline-block;
+    margin-top:3px;
+    cursor:pointer;
+}
+
+.show{
+    width:50px;
+    height:50px;
+    position:absolute;
+    right:0;
+    top:0;
+    border:none;	
+	cursor:pointer;
+    background:url(../img/show.png);
+}
+
+.hide{
+    background-position:0 -50px;
+}
+
+/*--grid--*/
+
+.grid{
+	margin-top:50px;
+	width:100%;
+}
+
+.grid li{
+	width:25%;
+	display:block;
+	float:left;
+	margin:0;
+}
+
+.grid a{
+    display:block;
+	float:left;
+	font-size:0;
+	width:100%;
+	position:relative;
+	background:url(../img/loading.gif) center no-repeat;
+}
+
+.grid a img{
+	visibility:hidden;
+	opacity:0;
+	width:100%;
+	height:100%;
+}
+
+.grid a span{
+    content:"";
+    position:Absolute;
+    right:0;
+    bottom:0;
+    box-shadow:-1px -1px 0px rgba(0,0,0,0.05);
+    border-left:25px solid transparent;
+    border-top:25px solid transparent;
+    border-right:25px solid #fff;
+    border-bottom:25px solid #fff;
+    border-top-left-radius:10px;
+	border-width:0;
+	-moz-transition:border-width 0.4s ease;
+	-webkit-transition:border-width 0.4s ease;
+	-o-transition:border-width 0.4s ease;
+	-ms-transition:border-width 0.4s ease;
+	transition:border-width 0.4s ease;
+}
+
+.grid a:hover span{
+	border-width:25px;
+}
+
+@media only screen and (max-width:768px){
+
+.search{
+	display:none;
+}
+
+.navigation{
+	margin-left:50px;
+}
+
+.grid li{
+	width:33.33333333333333333333333333333333333%;
+}
+
+.grid a:hover span{
+	border-width:20px;
+}
+}
+
+@media only screen and (max-width:600px){
+
+.contact{
+	height:70px;
+}
+
+.social li{
+	width:50%;
+	margin-bottom:5px;
+}
+
+.email{
+	margin-left:20px;
+}
+
+.navigation{
+	display:none;
+}
+
+.r-navigation{
+	display:block;
+	padding:5px;
+	height:30px;
+	border:1px solid #d0d0d0;
+	color:#555;
+	width:200px;
+	float:right;
+	margin-right:60px;
+	margin-top:12px;
+}
+
+.grid li{
+	width:50%;
+}
+}
+
+@media only screen and (max-width:320px){
+
+.top-header{
+	position:static;
+}
+
+.grid{
+	margin-top:0;
+}
+
+.contact{
+	height:130px;
+}
+
+.social li{
+	width:100%;
+}
+
+.social a{
+	margin-left:27%;
+}
+
+.grid li{
+	width:100%;
+}
+
+.header{
+	height:130px;
+}
+
+.logo{
+	display:block;
+	float:none;
+	width:100%;
+	margin-left:30%;
+	margin-top:0;
+	position:relative;
+	top:20px;
+}
+
+.r-navigation{
+	float:none;
+	width:90%;
+	margin:auto;
+	display:block;
+	margin-top:40px;
+}
+}

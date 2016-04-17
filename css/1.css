@@ -1,0 +1,524 @@
+@charset "utf-8";
+/* reset */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+     border: 0pt none;
+     font: inherit;
+     margin: 0pt;
+     padding: 0pt;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+     display: block;
+}
+
+body {
+     line-height: 1;
+}
+
+ol, ul {
+     list-style: none outside none;
+}
+
+blockquote, q {
+     quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+     content: none;
+}
+
+table {
+     border-collapse: collapse;
+     border-spacing: 0pt;
+}
+a{
+	text-decoration:none;
+}
+
+.clearfix:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+	font-size:0!important;
+}
+ 
+.clearfix {
+	display: inline-block;
+	width:100%;
+}
+ 
+html[xmlns] .clearfix {
+	display: block;
+}
+ 
+* html .clearfix {
+	height: 1%;
+}
+
+
+@font-face {
+    font-family: 'DINRegular';
+    src: url('../font/din-webfont.eot');
+    src: url('../font/din-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../font/din-webfont.woff') format('woff'),
+         url('../font/din-webfont.ttf') format('truetype'),
+         url('../font/din-webfont.svg#DINRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+/*---end reset---*/
+
+body{
+	font-size:12px;
+	background:#fff;
+	font-family: 'DINRegular';
+}
+
+a{
+	color:#232323;
+	-moz-transition:all 0.4s ease;
+	-webkit-transition:all 0.4s ease;
+	-o-transition:all 0.4s ease;
+	transition:all 0.4s ease;
+}
+
+
+.top-header{
+    position:fixed;
+	z-index:999;
+    top:0;
+    width:100%;
+    left:0;
+    box-shadow:0 0 5px rgba(0,0,0,0.2)
+}
+
+.contact{
+    width:100%;
+    background-color:#F4F4F4;
+    height:40px;
+    display:none;
+    position: fixed;
+    top: 50px;
+}
+
+.contact a{
+    color:#fff;
+}
+.header{
+	background-color:#fff;
+    height:50px;
+    position:relative;
+}
+
+.logo{
+    float:left;
+    font-size:0;
+    display:block;
+    margin-left:20px;
+    margin-top:5px;
+}
+.r-navigation{
+	display:none;
+}
+
+.navigation{
+    float:left;
+    margin-left:90px;
+}
+
+.navigation li{
+    display:inline-block;
+}
+
+.navigation a{
+    display:block;
+    font-size:10px;
+    text-transform:uppercase;
+    padding:19px 10px;
+    border-top:2px solid transparent;
+    margin:0 10px;
+    letter-spacing:1px;
+    position:relative;
+}
+
+.navigation a:before{
+    position:Absolute;
+    content:"/";
+    right:-15px;
+    color: #e1e1e1
+}
+
+.navigation a:hover,.navigation .on{
+    border-color:black  ;
+}
+
+.search{
+    float:right;
+    margin-right: 40px;
+    margin-top:3px;
+    padding-bottom: 3px;
+}
+
+.s{
+    width: 200px;
+    border:none;
+    height: 24px;
+    font-size:13px;
+    color:#555;
+    font-style:italic;
+    font-family: 'DINRegular';
+}
+
+.searchsubmit{
+    background:url(../img/search.png) center no-repeat;
+    border:none;
+    position: relative;
+    top: 5px;
+    left: 5px;
+    display:inline-block;
+    margin-top:4px;
+    cursor:pointer;
+}
+
+.show{
+    width:50px;
+    height:50px;
+    position:absolute;
+    right:0;
+    top:0;
+    border:none;	
+	cursor:pointer;
+    background:url(../img/show1.png);
+}
+
+.hide{
+    background-position:0 -50px;
+}
+.drop {
+   float:left;
+   margin-left: 50px;
+}
+
+.drop li {
+    float: left;
+}
+
+ .drop li a {
+    display:block;
+    font-size:10px;
+    text-transform:uppercase;
+    padding:19px 10px;
+    border-top:2px solid transparent;
+    margin:0 10px;
+    letter-spacing:1px;
+}
+.dropbtn {
+    display:block;
+    font-size:10px;
+    text-transform:uppercase;
+    padding:19px 10px;
+    border-top:2px solid transparent;
+    margin:0 10px;
+    letter-spacing:1px;
+    position:fixed;
+    right: 100px;
+}
+.dropdown-content {
+    display:block;
+    font-size:10px;
+    text-transform:uppercase;
+    padding:19px 10px;
+    border-top:2px solid transparent;
+    margin:0 10px;
+    letter-spacing:1px;
+    position:fixed;
+    top: -21px;
+    right: 20px;
+}
+
+.drop li a:hover, .dropdown:hover .dropbtn {
+    border-color:black;
+}
+
+.drop li.dropdown {
+    display: block;
+}
+
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #fff}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+/*css social*/
+
+.social a{
+    display:block;
+    width:32px;
+    height:32px;
+    float:left;
+    margin-top: 5px;
+    margin-left:25px;
+    margin-right:25px;
+    position:relative;
+}
+
+.facebook{
+    background-image:url(../img/facebook.png);
+}
+
+.twitter{
+    background-image:url(../img/twitter.png);
+}
+
+.pinterest{
+    background-image:url(../img/pinterest.png);
+}
+
+.dribbble{
+    background-image:url(../img/dribbble.png);
+}
+
+.rss{
+    background-image:url(../img/rss.png);
+}
+
+.social span{
+    content:"";
+    position:absolute;
+    z-index:-1;
+    width:36px;
+    height:36px;
+    border-radius:32px;
+    left:-2px;
+    top:-2px;
+    -moz-transform:scale(0);
+    -webkit-transform:scale(0);
+    -o-transform:scale(0);
+    -ms-transform:scale(0);
+    transform:scale(0);
+}
+
+.facebook span{
+    background-color:#1d3379;
+}
+
+.twitter span{
+    background-color:#2ee2f7;
+}
+
+.pinterest span{
+    background-color:#ed1539;
+}
+
+.dribbble span{
+    background-color:#d40087;
+}
+
+.rss span{
+    background-color:#ff8400;
+}
+
+.social li:hover span{
+    -moz-animation:bubble 0.5s;
+    -webkit-animation:bubble 0.5s;
+    -o-animation:bubble 0.5s;
+    -ms-animation:bubble 0.5s;
+    animation:bubble 0.5s;
+    -moz-transform:scale(1);
+    -webkit-transform:scale(1);
+    -o-transform:scale(1);
+    -ms-transform:scale(1);
+    transform:scale(1);
+}
+
+.social a:hover{
+    background-position:0 -32px;
+}
+
+@-moz-keyframes bubble{
+0% { -moz-transform:scale(0)}
+50% { -moz-transform:scale(1.2)}
+100% { -moz-transform:scale(1)}
+}
+
+@-webkit-keyframes bubble{
+0% { -webkit-transform:scale(0)}
+50% { -webkit-transform:scale(1.2)}
+100% { -webkit-transform:scale(1)}
+}
+
+@-o-keyframes bubble{
+0% { -o-transform:scale(0)}
+50% { -o-transform:scale(1.2)}
+100% { -o-transform:scale(1)}
+}
+
+@-ms-keyframes bubble{
+0% { -ms-transform:scale(0)}
+50% { -ms-transform:scale(1.2)}
+100% { -ms-transform:scale(1)}
+}
+
+@keyframes bubble{
+0% { transform:scale(0)}
+50% { transform:scale(1.2)}
+100% { transform:scale(1)}
+}
+/* 740 px tro xuong thi css khac*/
+@media only screen and (max-width:768px){
+
+.search{
+    display:inherit;
+}
+
+.navigation{
+    margin-left:40px;
+}
+
+.grid li{
+    width:33.33333333333333333333333333333333333%;
+}
+
+.grid a:hover span{
+    border-width:10px;
+}
+}
+
+@media only screen and (max-width:632px){
+.navigation-right{
+    float: right;
+    margin-right: 0px;
+}
+.contact{
+    height:40px;
+}
+.drop {
+   float:left;
+}
+
+.drop li {
+    float: left;
+}
+
+ .drop li a {
+    display:block;
+    font-size:10px;
+    text-transform:uppercase;
+    padding:19px 10px;
+    border-top:2px solid transparent;
+    margin:0 10px;
+    letter-spacing:1px;
+    position:fixed;
+    right: 15px;
+}
+.dropbtn {
+    display:block;
+    font-size:10px;
+    text-transform:uppercase;
+    padding:19px 10px;
+    border-top:2px solid transparent;
+    margin:0 10px;
+    letter-spacing:1px;
+    position:fixed;
+    right: 100px;
+}
+
+.drop li a:hover, .dropdown:hover .dropbtn {
+    background-color: white;
+}
+
+.drop li.dropdown {
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    font-size:10px;
+    text-transform:uppercase;
+    padding:19px 10px;
+    border-top:2px solid transparent;
+    margin:0 10px;
+    letter-spacing:1px;
+    position:fixed;
+    top: 50px;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    top:51px;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.social a{
+    display:block;
+    width:32px;
+    height:32px;
+    float:left;
+    margin-top: 5px;
+    margin-left:2px;
+    margin-right:2px;
+    position:relative;
+}
+.grid li{
+    width:33.33333333333333333333333333333333333%;
+}
+}
+
+@media only screen and (max-width:460px){
+
+.top-header{
+    position:static;
+}
+.grid li{
+    width:100%;
+}
+.navigation{
+    float:left;
+    margin-left:10px;
+}
+
+
+.logo{
+    float:left;
+    font-size:0;
+    display:block;
+    height: 25px;
+    width: 25px;
+    margin-left:2px;
+    margin-top:5px;
+}
+
+.dropbtn {
+    display:block;
+    font-size:10px;
+    text-transform:uppercase;
+    padding:19px 10px;
+    border-top:2px solid transparent;
+    margin:0 10px;
+    letter-spacing:1px;
+    position:fixed;
+    right: 10px;
+}
+}

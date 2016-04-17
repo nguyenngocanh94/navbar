@@ -1,0 +1,173 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+	<meta charset="utf-8">
+	<link href="css/css.css" rel="stylesheet">
+	<script src="javascript/jquery.js"></script>
+	<script src="javascript/jqueryEasing.js"></script>
+</head>
+	
+<body>
+	<div class="top-header">
+		<div class="contact">
+			<ul class="social">
+				<li><a href="#" class="facebook"><span></span> Join Us on Facebook</a></li>
+				<li><a href="#" class="twitter"><span></span> Follow Us on Twitter</a></li>
+				<li><a href="#" class="email"><span></span> Send Us Email</a></li>
+				<li><a href="#" class="behance"><span></span> Find Us on Behance</a></li>
+			</ul>
+		</div>
+		<div class="header">
+			<a href="#" class="logo"><img src="img/logo.png" alt="logo"/></a>
+			<ul class="navigation">
+				<li><a href="#">Home</a></li>
+				<li><a href="#">Portfolio</a></li>
+				<li><a href="#">Workshop</a></li>
+				<li><a href="#">Gallery</a></li>
+				<li><a href="#">About</a></li>
+				<li><a href="#">Contact</a></li>
+			</ul><!--end navigation-->
+
+			<form class="search">
+				<input type="text" class="s" value="Search for somthing..."/>
+				<input type="submit" class="searchsubmit" value=""/>
+			</form><!--end search-->
+
+			<button class="show"></button>
+		</div><!--end header-->
+	</div>
+
+	<ul class="grid">
+		<li>
+			<a href="#"><img src="img/1.jpg" alt="pic"/><span></span></a>
+		</li>
+		<li>
+			<a href="#"><img src="img/2.jpg" alt="pic"/><span></span></a>
+		</li>
+		<li>
+			<a href="#"><img src="img/3.jpg" alt="pic"/><span></span></a>
+		</li>
+		<li>
+			<a href="#"><img src="img/4.jpg" alt="pic"/><span></span></a>
+		</li>
+		<li>
+			<a href="#"><img src="img/5.jpg" alt="pic"/><span></span></a>
+		</li>
+		<li>
+			<a href="#"><img src="img/6.jpg" alt="pic"/><span></span></a>
+		</li>
+		<li>
+			<a href="#"><img src="img/7.jpg" alt="pic"/><span></span></a>
+		</li>
+		<li>
+			<a href="#"><img src="img/8.jpg" alt="pic"/><span></span></a>
+		</li>
+		<li>
+			<a href="#"><img src="img/9.jpg" alt="pic"/><span></span></a>
+		</li>
+		<li>
+			<a href="#"><img src="img/10.jpg" alt="pic"/><span></span></a>
+		</li>
+		<li>
+			<a href="#"><img src="img/11.jpg" alt="pic"/><span></span></a>
+		</li>
+		<li>
+			<a href="#"><img src="img/12.jpg" alt="pic"/><span></span></a>
+		</li>
+		<li>
+			<a href="#"><img src="img/13.jpg" alt="pic"/><span></span></a>
+		</li>
+		<li>
+			<a href="#"><img src="img/14.jpg" alt="pic"/><span></span></a>
+		</li>
+		<li>
+			<a href="#"><img src="img/15.jpg" alt="pic"/><span></span></a>
+		</li>
+		<li>
+			<a href="#"><img src="img/16.jpg" alt="pic"/><span></span></a>
+		</li>
+		<li>
+			<a href="#"><img src="img/17.jpg" alt="pic"/><span></span></a>
+		</li>
+		<li>
+			<a href="#"><img src="img/18.jpg" alt="pic"/><span></span></a>
+		</li>
+		<li>
+			<a href="#"><img src="img/19.jpg" alt="pic"/><span></span></a>
+		</li>
+		<li>
+			<a href="#"><img src="img/20.jpg" alt="pic"/><span></span></a>
+		</li>
+	</ul>
+<script>
+
+(function($){
+	$('.show').click(function(){
+		el = $(this);
+		if(!$(el).hasClass('hide')){
+			el.addClass('hide');
+			$('.contact').stop(false,true).slideDown(400,'easeOutBack');
+
+		}else{
+			el.removeClass('hide');
+			$('.contact').stop(false,true).slideUp(400,'easeOutBack');
+		}
+	})
+
+	$('<select class="r-navigation"></select>').insertAfter('.navigation');
+	$('<option></option>',{
+		'text':'Select one Page',
+		'check':'checked',
+		'value':'',
+	}).appendTo('.r-navigation');
+
+	$('.navigation > li > a').each(function(){
+		el = $(this);
+		parent = el.parent();
+		link = el.attr('href');
+		name = el.text();
+		$('<option></option>',{
+			'text':name,
+			'value':link,
+		}).appendTo('.r-navigation');
+
+		if(parent.hasClass('parent')){
+			el.next().find('a').each(function(){
+				e = $(this);
+				name_2 ="&emsp;&emsp;" +e.text();
+				link_2 = e.attr('href');
+				$('<option></option>',{
+					'html':name_2,
+					'value':link_2,
+				}).appendTo('.r-navigation');
+			});
+		}
+	});
+
+	$('.r-navigation').change(function(){
+		window.location = $(this).find('option:checked').val();
+	});
+
+	$(window).load(function(){
+		maxImage = $('.grid').find('img').size();
+
+		var i = 0;
+		
+		timer = setInterval(function(){
+			$('.grid').find('img').eq(i).css({'visibility':'visible'}).animate({opacity:1},400,function(){
+				if( i == maxImage ){
+					clearInterval(timer);
+				}else{
+					i++;
+				}
+			})
+		}
+		,300);
+		
+	})
+})(jQuery);
+
+</script>
+
+</body>
+</html>

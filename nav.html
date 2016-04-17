@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>navbar</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale:0.5">
+	<link rel="stylesheet" type="text/css" href="css/1.css">
+	<script src="javascript/jquery.js"></script>
+	<script src="javascript/jqueryEasing.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+</head>
+<body>
+	<div class="top-header">
+		<div class="header">
+			<a href="#" class="logo"><img src="img/logo.png" alt="logo"/></a>
+			<ul class="navigation">
+				<li><a href="#">TOP</a></li>
+				<li><a href="#">VOTED</a></li>
+				<li><a href="#">RANDOM</a></li>
+			</ul><!--end navigation 1-->
+			<ul class="drop">
+			  <li class="dropdown"> 
+			    <a href="#" class="dropbtn"> SIGN IN</a>
+			    <div class="dropdown-content">
+			      <a href="#">JOIN US</a>
+			    </div>
+			  </li>
+			</ul>
+			<button class="show"></button>
+			<div class="contact">
+			<ul class="social">
+				<li><a href="#" class="facebook"><span title="Facebook"></span></a></li>
+				<li><a href="#" class="twitter"><span title="Twiter"></span></a></li>
+				<li><a href="#" class="pinterest" value><span title="Mail"></span></a></li>
+			</ul>
+			<form class="search">
+				<input type="text" class="s" placeholder="Search for somthing..."/>
+				<input type="submit" class="searchsubmit" value=""/>
+			</form><!--end search-->
+		</div>
+		</div><!--end header-->
+	</div>
+
+<script>
+
+(function($){
+	$('.show').click(function(){
+		el = $(this);
+		if(!$(el).hasClass('hide')){
+			el.addClass('hide');
+			$('.contact').stop(false,true).slideDown(400,'easeOutBack');
+
+		}else{
+			el.removeClass('hide');
+			$('.contact').stop(false,true).slideUp(400,'easeOutBack');
+		}
+	});
+})(jQuery);
+
+</script>
+</body>
+</html>
